@@ -4,25 +4,25 @@ require './test/test_helper'
 class KeyTest < Minitest::Test
 
   def setup
-    @key_1 = Key.new
+    @key = Key.new
   end
 
   def test_it_exists
-    assert_instance_of Key, @key_1
+    assert_instance_of Key, @key
   end
 
-  def test_random_key_attributes
-    assert @key_1.random_key.between?('00001', '99999')
-    assert_equal 5, @key_1.random_key.length
+  def test_key_attributes
+    assert @key.key.between?('00001', '99999')
+    assert_equal 5, @key.key.length
   end
 
-  def test_random_key
-    @key_1 = stub(random_key: '12345')
-    assert_equal '12345', @key_1.random_key
+  def test_key
+    @key = stub(key: '12345')
+    assert_equal '12345', @key.key
   end
 
   def test_keys_hash
-    @key_1 = stub(keys_hash: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
+    @key = stub(keys_hash: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
     expected = {
       "A" => 3,
       "B" => 5,
@@ -30,7 +30,7 @@ class KeyTest < Minitest::Test
       "D" => 9
     }
 
-    assert_equal expected, @key_1.keys_hash
+    assert_equal expected, @key.keys_hash
   end
 
   # def test_given_key_attributes
