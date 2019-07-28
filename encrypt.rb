@@ -12,12 +12,12 @@ loop do
   elsif input == 'Y'
     puts 'Please enter a numeric key of up to 5 digits:'
     puts '> '
-    key = gets.chomp
-    until key.between?(1, 99_999)
+    user_key = gets.chomp
+    until given_key.between?(1, 99_999)
       puts 'Numbers only, and 5 digits or fewer!'
       puts 'Please try again with a numeric key of up to 5 digits:'
       puts '> '
-      key = gets.chomp
+      user_key = gets.chomp
     end
     exit
   else
@@ -26,8 +26,8 @@ loop do
   end
 end
 
-puts 'Would you like to enter your own date of encryption? Press Y for yes, and N for no.'
-input = gets.chomp.upcase
+# puts 'Would you like to enter your own date of encryption? Press Y for yes, and N for no.'
+# input = gets.chomp.upcase
 # loop do
 #   if input == 'N'
 #     puts "No problem! You will automatically work with today's date."
@@ -47,4 +47,4 @@ input = gets.chomp.upcase
 #     puts 'That is not a valid input. Please enter Y or N: '
 #     input = gets.chomp.upcase
 #   end
-end
+# end

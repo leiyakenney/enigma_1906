@@ -12,9 +12,10 @@ class KeyTest < Minitest::Test
   end
 
   def test_random_key_attributes
-    assert @key.random_key.between?('1', '99999')
-    p @key.random_key
+    assert @key.random_key.between?('00001', '99999')
     assert_equal 5, @key.random_key.length
   end
+
+
 
 end
