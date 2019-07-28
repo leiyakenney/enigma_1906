@@ -5,7 +5,7 @@ class Offset
     @date = Date.today.strftime("%d%m%y").to_i
   end
 
-  def offset
+  def offsets
     offset_array = (@date ** 2).to_s.split("")[-4..-1]
     offset_hash = Hash.new(0)
       offset_hash["A"] += offset_array[0].to_i
