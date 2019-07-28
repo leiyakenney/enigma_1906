@@ -31,7 +31,6 @@ class KeyTest < Minitest::Test
     }
 
     assert_equal expected, @key_1.keys_hash
-
   end
 
   # def test_given_key_attributes
