@@ -17,6 +17,7 @@ class OffsetTest < Minitest::Test
   end
 
   def test_offset_hash
+    stub(date: 280719)
     expected = {
       "A" => 6,
       "B" => 9,
