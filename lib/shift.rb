@@ -1,9 +1,11 @@
 class Shift
 
   def shift
-    @key.value.each do |key, value|
-      if @keys.value == @offsets.value
+    @keys.values.each do |key, value|
+      if value == @offsets.value
 
+      end
+    end
   end
 
 end
