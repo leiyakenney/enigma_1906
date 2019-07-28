@@ -5,6 +5,7 @@ end
 
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require 'date'
 require 'pry'
 require './lib/key'
