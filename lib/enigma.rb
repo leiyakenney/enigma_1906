@@ -1,9 +1,10 @@
 class Enigma
+  attr_reader :message, :key, :offset
 
-  def initialize(key, offset, shift)
-    @key = Key.new
-    @offset = Offset.new
-    @shift = Shift.new
+  def initialize(message, key, date)
+    @message = message
+    @key = key
+    @offset = date
   end
 
 end
