@@ -1,21 +1,14 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'pry'
-require 'date'
-require './lib/key'
-require './lib/offset'
-require './lib/shift'
-require './lib/enigma'
+require './test/test_helper'
 
 class EnigmaTest < Minitest::Test
 
-  def setup
-    @enigma = Enigma.new
-  end
-
-  def test_it_exists
-    assert_instance_of Enigma, @enigma
-  end
+  # def setup
+  #   @enigma = Enigma.new
+  # end
+  #
+  # def test_it_exists
+  #   assert_instance_of Enigma, @enigma
+  # end
 
   # def test_it_encrypts
   #   expected = {
@@ -42,7 +35,7 @@ class EnigmaTest < Minitest::Test
 # #decrypt a message with a key (uses today's date)
 # enigma.decrypt(encrypted[:encryption], "02715")
 # #=> # decryption hash here
-# 
+#
 # # encrypt a message (generates random key and uses today's date)
 # enigma.encrypt("hello world")
 # #=> # encryption hash here
