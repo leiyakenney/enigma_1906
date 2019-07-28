@@ -9,6 +9,4 @@ class Key
     rand(1..99_999).to_s.rjust(5, '0')
   end
 
-
-
 end

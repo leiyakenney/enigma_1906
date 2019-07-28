@@ -16,6 +16,8 @@ class KeyTest < Minitest::Test
     assert_equal 5, @key.random_key.length
   end
 
-
+  # def test_given_key_attributes
+  #   assert @key.given_key.between?('00001', '99999')
+  # end
 
 end
