@@ -11,7 +11,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_shift_values
-    @key = stub(random_key: '12345')
+    @key = stub(keys_hash: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
     @offset = stub(date: 280719)
     expected = {
         "A" => 9,
