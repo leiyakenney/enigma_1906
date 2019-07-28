@@ -1,6 +1,5 @@
 require './test/test_helper'
 
-
 class KeyTest < Minitest::Test
 
   def setup
@@ -21,8 +20,8 @@ class KeyTest < Minitest::Test
     assert_equal '12345', @key_1.random_key
   end
 
-  def test_split_by_letter
-    @key_1 = stub(split_by_letter: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
+  def test_keys
+    @key_1 = stub(keys: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
     expected = {
       "A" => 3,
       "B" => 5,
@@ -30,7 +29,7 @@ class KeyTest < Minitest::Test
       "D" => 9
     }
 
-    assert_equal expected, @key_1.split_by_letter
+    assert_equal expected, @key_1.keys
 
   end
 

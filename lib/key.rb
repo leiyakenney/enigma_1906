@@ -13,7 +13,7 @@ class Key
   #   @key = given_key
   # end
 
-  def split_by_letter
+  def keys
     key_array = random_key.split('') #|| key_array = given_key.split('')
     keys_hash = Hash.new(0)
       keys_hash["A"] += (key_array[0] + key_array[1]).to_i
