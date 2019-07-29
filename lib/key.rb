@@ -9,10 +9,6 @@ class Key
     rand(1..99_999).to_s.rjust(5, '0')
   end
 
-  # def given_key
-  #   @key = given_key
-  # end
-
   def keys_hash
     hash_of_keys = Hash.new(0)
       hash_of_keys["A"] = @key_val[0..1].to_i

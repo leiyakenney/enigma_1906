@@ -17,12 +17,9 @@ class Enigma
     encrypt_key = Key.new(key)
     encrypt_offset = Offset.new(date)
     encrypt_enigma = Enigma.new
-    encrypt_hash = {}
-    encrypt_hash[:encryption] = encrypt_enigma.total_msg(message, key, date)
-    # binding.pry
-    encrypt_hash[:key] = encrypt_key.key_val
-    encrypt_hash[:date] = encrypt_offset.date
-    encrypt_hash
+    {encryption: encrypt_enigma.total_msg(message, key, date),
+     key: encrypt_key.key_val,
+     date: encrypt_offset.date}
   end
   #
   # def decrypt(ciphertext, key, date)
