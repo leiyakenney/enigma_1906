@@ -1,13 +1,9 @@
 class Key
   attr_reader :key_val
 
-  # def initialize(key_val = random_key)
-  #   @key_val = key_val.to_s.rjust(5, '0')
-  # end
-
-  def initialize(key_val = nil)
+  def initialize(key_val = random_key)
     @key_val = key_val.to_s.rjust(5, '0')
-  end 
+  end
 
   def random_key
     rand(1..99_999).to_s.rjust(5, '0')
