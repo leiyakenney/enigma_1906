@@ -59,6 +59,10 @@ class Enigma
     shift_hash(message).values.reduce(&:zip).join
   end
 
+  # def total_msg
+  #   shifted_hash_to_msg(message)
+  # end
+
   # def encrypt(message, key, date)
   #
   # end
