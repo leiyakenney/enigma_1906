@@ -15,14 +15,16 @@ class OffsetTest < Minitest::Test
     assert_equal 280719, @offset.date
   end
 
-  def test_offsets
+
+  def test_offset_hash
+    stub(date: 280719)
     expected = {
       "A" => 6,
       "B" => 9,
       "C" => 6,
       "D" => 1
     }
-    assert_equal expected, @offset.offsets
+    assert_equal expected, @offset.offset_hash
   end
 
 end

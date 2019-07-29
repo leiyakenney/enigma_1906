@@ -1,8 +1,8 @@
 class Key
-  attr_reader :key
+  attr_reader :key_val
 
-  def initialize
-    @key = random_key
+  def initialize(key_val)
+    @key_val = key_val.to_s.rjust(5, '0')
   end
 
   def random_key
@@ -13,13 +13,13 @@ class Key
   #   @key = given_key
   # end
 
-  def keys
-    key_array = random_key.split('') #|| key_array = given_key.split('')
-    keys_hash = Hash.new(0)
-      keys_hash["A"] += (key_array[0] + key_array[1]).to_i
-      keys_hash["B"] += (key_array[1] + key_array[2]).to_i
-      keys_hash["C"] += (key_array[2] + key_array[3]).to_i
-      keys_hash["D"] += (key_array[3] + key_array[4]).to_i
-    keys_hash
+  def keys_hash
+    key_array = key_val.split('')
+    hash_of_keys = Hash.new(0)
+      hash_of_keys["A"] = (key_array[0].to_i + key_array[1].to_i)
+      hash_of_keys["B"] = (key_array[1].to_i + key_array[2].to_i)
+      hash_of_keys["C"] = (key_array[2].to_i + key_array[3].to_i)
+      hash_of_keys["D"] = (key_array[3].to_i + key_array[4].to_i)
+    hash_of_keys
   end
 end
