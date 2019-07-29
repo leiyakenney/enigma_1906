@@ -12,10 +12,10 @@ class ShiftTest < Minitest::Test
 
   def test_shift_values
     expected = {
-        "A" => 9,
-        "B" => 14,
-        "C" => 13,
-        "D" => 10
+        "A" => 18,
+        "B" => 32,
+        "C" => 40,
+        "D" => 46
       }
     assert_equal expected, @shift.shift
   end

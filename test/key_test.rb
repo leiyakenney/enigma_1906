@@ -31,10 +31,10 @@ class KeyTest < Minitest::Test
 
   def test_keys_hash
     expected = {
-      "A" => 3,
-      "B" => 5,
-      "C" => 7,
-      "D" => 9
+      "A" => 12,
+      "B" => 23,
+      "C" => 34,
+      "D" => 45
     }
 
     assert_equal expected, @key.keys_hash

@@ -14,12 +14,11 @@ class Key
   # end
 
   def keys_hash
-    key_array = key_val.split('')
     hash_of_keys = Hash.new(0)
-      hash_of_keys["A"] = (key_array[0].to_i + key_array[1].to_i)
-      hash_of_keys["B"] = (key_array[1].to_i + key_array[2].to_i)
-      hash_of_keys["C"] = (key_array[2].to_i + key_array[3].to_i)
-      hash_of_keys["D"] = (key_array[3].to_i + key_array[4].to_i)
+      hash_of_keys["A"] = @key_val[0..1].to_i
+      hash_of_keys["B"] = @key_val[1..2].to_i
+      hash_of_keys["C"] = @key_val[2..3].to_i
+      hash_of_keys["D"] = @key_val[3..4].to_i
     hash_of_keys
   end
 end
