@@ -38,10 +38,11 @@ module EnigmaHelper
       end
     end
     shifted_ltrs_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
-    shift(key, date).each do |key, shift_amt|
+    shift(key, date).each do |shift_key, shift_amt|
       shifted_chars = char_set.rotate(shift_amt)
-      ltr_hash[key].each do |index|
-        shifted_ltrs_hash[key] << shifted_chars[index]
+      # binding.pry
+      ltr_hash[shift_key].map do |index|
+          shifted_ltrs_hash[shift_key] << shifted_chars[index]
       end
     end
     shifted_ltrs_hash
