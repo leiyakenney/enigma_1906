@@ -62,4 +62,38 @@ module EnigmaHelper
     end
     shifted_message
   end
+
+  def decrypt_hash(message, key, date)
+    ltr_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
+    hash_for_shifting(message, key, date).each do |key, ltr_arr|
+      ltr_arr.each do |ltr|
+        ltr_hash[key] << char_set.index(ltr)
+      end
+    end
+    decrypted_ltrs_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
+    shift(key, date).each do |shift_key, shift_amt|
+      shifted_chars = char_set.rotate(shift_amt *= -1)
+      ltr_hash[shift_key].map do |index|
+        decrypted_ltrs_hash[shift_key] << shifted_chars[index]
+      end
+    end
+    decrypted_ltrs_hash
+  end
+
+  def decrypted_hash_to_msg(message, key, date)
+    decrypt_hash(message, key, date).values.reduce(&:zip).join
+  end
+
+  def total_decrypt_msg(message, key, date)
+    decrypted_message = decrypted_hash_to_msg(message, key, date)
+    special_chars(message).each do |char, index|
+      if index > decrypted_message.size
+        decrypted_message = decrypted_message + char
+      else
+        decrypted_message.insert(index, char)
+      end
+    end
+    decrypted_message
+  end
+
 end

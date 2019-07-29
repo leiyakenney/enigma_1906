@@ -21,9 +21,14 @@ class Enigma
      key: encrypt_key.key_val,
      date: encrypt_offset.date}
   end
-  #
-  # def decrypt(ciphertext, key, date)
-  #
-  # end
+
+  def decrypt(ciphertext, key, date)
+    decrypt_key = Key.new(key)
+    decrypt_offset = Offset.new(date)
+    decrypt_enigma = Enigma.new
+    {decryption: decrypt_enigma.total_decrypt_msg(ciphertext, key, date),
+    key: decrypt_key.key_val,
+    date: decrypt_offset.date}
+  end
 
 end
