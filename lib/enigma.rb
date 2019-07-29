@@ -13,22 +13,18 @@ class Enigma
     ("a".."z").to_a << " "
   end
 
-  def encrypt(message, key, date)
-    encrypt_key = Key.new(key)
-    encrypt_offset = Offset.new(date)
+  def encrypt(message, key = Key.new.random_key, date = Offset.new.default_date)
     encrypt_enigma = Enigma.new
     {encryption: encrypt_enigma.total_msg(message, key, date),
-     key: encrypt_key.key_val,
-     date: encrypt_offset.date}
+    key: key,
+    date: date}
   end
 
-  def decrypt(ciphertext, key, date)
-    decrypt_key = Key.new(key)
-    decrypt_offset = Offset.new(date)
+  def decrypt(ciphertext, key = Key.new.random_key, date = Offset.new.default_date)
     decrypt_enigma = Enigma.new
     {decryption: decrypt_enigma.total_decrypt_msg(ciphertext, key, date),
-    key: decrypt_key.key_val,
-    date: decrypt_offset.date}
-  end
+    key: key,
+    date: date}
+end
 
 end
