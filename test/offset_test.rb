@@ -3,21 +3,18 @@ require './test/test_helper'
 class OffsetTest < Minitest::Test
 
   def setup
-    @offset = Offset.new
+    @offset = Offset.new(280719)
   end
 
   def test_it_exists
     assert_instance_of Offset, @offset
   end
 
-  def test_date_attributes
-    stub(date: 280719)
+  def test_attributes
     assert_equal 280719, @offset.date
   end
 
-
   def test_offset_hash
-    stub(date: 280719)
     expected = {
       "A" => 6,
       "B" => 9,
