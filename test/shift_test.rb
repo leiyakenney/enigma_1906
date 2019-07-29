@@ -25,13 +25,5 @@ class ShiftTest < Minitest::Test
     assert_equal expected, @shift.char_set
   end
 
-  def test_assign_letters_to_keys
-    expected = {
-      "A" => ['h', 'o', 'r'],
-      "B" => ['e', ' ', 'l'],
-      "C" => ['l', 'w', 'd'],
-      "D" => ['l', 'o']
-    }
-    assert_equal expected, @shift.assign_letters
-  end
+
 end
