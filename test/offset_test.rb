@@ -11,13 +11,13 @@ class OffsetTest < Minitest::Test
   end
 
   def test_attributes
-    assert_equal 280719, @offset.date
+    assert_equal '280719', @offset.date
   end
 
   def test_default_date
-    offset_2 = Offset.new(270719)
-    offset_2.stubs(:default_date).returns(270719)
-    assert_equal 270719, offset_2.default_date
+    offset_2 = Offset.new('270719')
+    offset_2.stubs(:default_date).returns('270719')
+    assert_equal '270719', offset_2.default_date
   end
 
   def test_offset_hash
