@@ -33,16 +33,12 @@ module EnigmaHelper
   def shift_hash(message, key, date)
     ltr_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
     hash_for_shifting(message, key, date).each do |key, ltr_arr|
-      ltr_arr.each do |ltr|
-        ltr_hash[key] << char_set.index(ltr)
-      end
+      ltr_arr.each { |ltr| ltr_hash[key] << char_set.index(ltr)}
     end
     shifted_ltrs_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
     shift(key, date).each do |shift_key, shift_amt|
       shifted_chars = char_set.rotate(shift_amt)
-      ltr_hash[shift_key].map do |index|
-        shifted_ltrs_hash[shift_key] << shifted_chars[index]
-      end
+      ltr_hash[shift_key].map { |index| shifted_ltrs_hash[shift_key] << shifted_chars[index]}
     end
     shifted_ltrs_hash
   end
@@ -66,16 +62,12 @@ module EnigmaHelper
   def decrypt_hash(message, key, date)
     ltr_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
     hash_for_shifting(message, key, date).each do |key, ltr_arr|
-      ltr_arr.each do |ltr|
-        ltr_hash[key] << char_set.index(ltr)
-      end
+      ltr_arr.each { |ltr| ltr_hash[key] << char_set.index(ltr)}
     end
     decrypted_ltrs_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
     shift(key, date).each do |shift_key, shift_amt|
       shifted_chars = char_set.rotate(shift_amt *= -1)
-      ltr_hash[shift_key].map do |index|
-        decrypted_ltrs_hash[shift_key] << shifted_chars[index]
-      end
+      ltr_hash[shift_key].map { |index| decrypted_ltrs_hash[shift_key] << shifted_chars[index]}
     end
     decrypted_ltrs_hash
   end
