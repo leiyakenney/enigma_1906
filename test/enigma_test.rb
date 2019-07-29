@@ -19,21 +19,26 @@ class EnigmaTest < Minitest::Test
   #   assert_equal ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'], @enigma.msg_arr
   # end
 
-  def test_hash_for_shift
+  def test_hash_for_shifting
     expected = {
       "A" => ['h', 'o', 'r'],
       "B" => ['e', ' ', 'l'],
       "C" => ['l', 'w', 'd'],
       "D" => ['l', 'o']
     }
-    assert_equal expected, @enigma.hash_for_shift("hello world")
-    assert_equal expected, @enigma.hash_for_shift("hello :)world!")
+    assert_equal expected, @enigma.hash_for_shifting("hello world")
+    assert_equal expected, @enigma.hash_for_shifting("hello :)world!")
   end
 
   def test_shift_hash
     expected = {
-      "A" => []
+      "A" => ['q', 'x', ' '],
+      "B" => ['s', 'n', 'z'],
+      "C" => ['y', 'i', 'q'],
+      "D" => ['v', 'y']
     }
+
+    assert_equal expected, @enigma.shift_hash("hello world")
   end
 
   # def test_it_encrypts
