@@ -7,12 +7,12 @@ require './modules/enigma_helper_module'
 
 enigma = Enigma.new
 
-message_for_cipher = File.open('message.txt', 'r')
+message_for_decryption = File.open('ciphertext.txt', 'r')
 
-encrypted_msg = File.open('encrypted.txt', 'w')
+decrypted_msg = File.open('decrypted.txt', 'w')
 
-encrypted_text = enigma.encrypt(message_for_cipher.read)
-encrypted_msg.write(encrypted_text[:encryption])
-encrypted_msg.close
+decrypted_text = enigma.decrypt(message_for_decryption.read)
+decrypted_msg.write(decrypted_text[:decryption])
+decrypted_msg.close
 
-puts "Created 'encrypted.txt' with the key #{encrypted_text[:key].to_i} and date #{encrypted_text[:date].to_i}"
+puts "Created 'decrypted.txt' with the key #{decrypted_text[:key].to_i} and date #{decrypted_text[:date].to_i}"
