@@ -1,12 +1,12 @@
 class Offset
   attr_reader :date
 
-  def initialize(date_val)
-    @date = date_val.to_i
+  def initialize(date)
+    @date = date
   end
 
   def default_date
-    @date = Date.today.strftime('%d%m%y').to_i
+    Date.today.strftime('%d%m%y').to_i
   end
 
   def offset_hash
