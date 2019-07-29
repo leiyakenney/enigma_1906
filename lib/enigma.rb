@@ -15,6 +15,15 @@ class Enigma
   #
   # end
 
+  # def special_chars(message)
+  #   special_chars_hash = {}
+  #   message.split('').each do |char|
+  #     unless @char_set.include?(char)
+  #       special_chars_hash[char] = message.index(char)
+  #     end
+  #   end
+  # end
+
   def hash_for_shifting(message)
     shift_hash = {"A" => [], "B" => [], "C" => [], "D" => []}
     index = 0
@@ -52,20 +61,17 @@ class Enigma
       end
     end
     shifted_ltrs_hash
-    end
+  end
 
-      # key.each do |key_val|
-      #   ltr_arr.each_with_index do |ltr, index|
-      #     ltr_index << index
-      #   end
-      #   if hash_for_shifting[key] == shift[key]
-      #     @char_set.rotate(shift[key])
-      #   end
-      #   @char_set.map do |character|
-      #     return @char_set.ltr_index
-      #   end
-      # end
-    # end
+  def shifted_hash_to_msg(message)
+    shifted_msg = []
+      shift_hash(message).map do |_key, shifted_arr|
+        shifted_msg << shifted_arr[0]
+        shifted_arr.delete(shifted_arr[0])
+        # require 'pry'; binding.pry
+      end
+    shifted_msg.join('')
+  end
 
   # def encrypt(message, key, date)
   #
