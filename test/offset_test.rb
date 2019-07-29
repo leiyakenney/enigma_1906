@@ -1,6 +1,5 @@
 require './test/test_helper'
 
-
 class OffsetTest < Minitest::Test
 
   def setup
@@ -15,6 +14,7 @@ class OffsetTest < Minitest::Test
     stub(date: 280719)
     assert_equal 280719, @offset.date
   end
+
 
   def test_offset_hash
     stub(date: 280719)
