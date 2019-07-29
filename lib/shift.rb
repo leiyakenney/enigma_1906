@@ -4,7 +4,7 @@ class Shift
   def initialize(key, offset)
     @key = Key.new(12345)
     @offset = Offset.new(280719)
-    @char_set = ("a".."z").to_a << " "
+
   end
 
   def shift
