@@ -3,7 +3,7 @@ require './test/test_helper'
 class OffsetTest < Minitest::Test
 
   def setup
-    @offset = Offset.new(280719)
+    @offset = Offset.new('280719')
   end
 
   def test_it_exists

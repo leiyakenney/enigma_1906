@@ -4,6 +4,7 @@ class EnigmaTest < Minitest::Test
 
   def setup
     @enigma = Enigma.new
+    @shift = Shift.new(12345, 280719).shift
   end
 
   def test_it_exists
@@ -54,14 +55,14 @@ class EnigmaTest < Minitest::Test
     assert_equal "qsyvxn:)iy zq!", @enigma.total_msg("hello :)world!")
   end
 
-  # def test_it_encrypts
-  #   expected = {
-  #     encryption: "keder ohulw",
-  #     key: "02715",
-  #     date: "040895"
-  #   }
-  #   assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
-  # end
+  def test_it_encrypts
+    expected = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
+  end
   #
   # def test_it_decrypts
   #   expected = {
