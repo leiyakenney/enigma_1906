@@ -10,14 +10,18 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
-  def test_assign_letters_to_keys
+  def test_msg_to_array
+    assert_equal ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'], @enigma.msg_arr
+  end
+
+  def test_array_for_shift
     expected = {
       "A" => ['h', 'o', 'r'],
       "B" => ['e', ' ', 'l'],
       "C" => ['l', 'w', 'd'],
       "D" => ['l', 'o']
     }
-    assert_equal expected, @shift.assign_letters
+    assert_equal expected, @enigma.array_for_shift
   end
 
   # def test_it_encrypts
