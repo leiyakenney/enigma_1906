@@ -6,7 +6,7 @@ class Offset
   end
 
   def default_date
-    @def_date = Date.today.strftime('%d%m%y').to_i
+    @date = Date.today.strftime('%d%m%y').to_i
   end
 
   def offset_hash
