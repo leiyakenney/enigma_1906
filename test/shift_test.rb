@@ -3,7 +3,7 @@ require './test/test_helper'
 class ShiftTest < Minitest::Test
 
   def setup
-    @shift = Shift.new
+    @shift = Shift.new(12345, 280719)
   end
 
   def test_it_exists
@@ -11,8 +11,6 @@ class ShiftTest < Minitest::Test
   end
 
   def test_shift_values
-    @key = stub(keys_hash: ({"A" => 3, "B" => 5, "C" => 7, "D" => 9}))
-    @offset = stub(date: 280719)
     expected = {
         "A" => 9,
         "B" => 14,
