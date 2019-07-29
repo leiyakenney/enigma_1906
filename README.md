@@ -12,7 +12,7 @@
 
 **TDD**
 
-2.9 - My coverage is at 98% because of two lines of code I would need to stub in to test (I think; also it's the same functionality, so it's really just one line that I'd need to figure out the stub for and then copy it over with minor adjustments), but again, didn't have time to do that. Otherwise, everything else is tested.
+2.9 - My coverage is at 98.2% because of two lines of code I would need to stub in to test (I think; also it's the same functionality, so it's really just one line that I'd need to figure out the stub for and then copy it over with minor adjustments), but again, didn't have time to do that. Otherwise, everything else is tested.
 
 
 **Version Control**
