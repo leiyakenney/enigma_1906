@@ -40,5 +40,4 @@ class KeyTest < Minitest::Test
     assert_equal expected, @key.keys_hash
   end
 
-
 end
