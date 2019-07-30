@@ -1,10 +1,14 @@
 class Offset
   attr_reader :date
 
-  def initialize
-    @date = Date.today.strftime("%d%m%y").to_i
+  def initialize(date)
+    @date = date
   end
-  
+
+  def default_date
+    Date.today.strftime('%d%m%y').to_i
+  end
+
   def offset_hash
     offset_array = (@date ** 2).to_s.split("")[-4..-1]
     hash_of_offsets = Hash.new(0)

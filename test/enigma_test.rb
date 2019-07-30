@@ -2,12 +2,56 @@ require './test/test_helper'
 
 class EnigmaTest < Minitest::Test
 
-  # def setup
-  #   @enigma = Enigma.new
-  # end
-  #
-  # def test_it_exists
-  #   assert_instance_of Enigma, @enigma
+  def setup
+    @enigma = Enigma.new
+  end
+
+  def test_it_exists
+    assert_instance_of Enigma, @enigma
+  end
+
+  def test_character_set
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal expected, @enigma.char_set
+  end
+
+  def test_special_chars
+    expected = {
+      ':' => 6,
+      ')' => 7,
+      '!' => 13
+    }
+    assert_equal expected, @enigma.special_chars("hello :)world!")
+  end
+
+  def test_hash_for_shifting
+    expected = {
+      "A" => ['h', 'o', 'r'],
+      "B" => ['e', ' ', 'l'],
+      "C" => ['l', 'w', 'd'],
+      "D" => ['l', 'o']
+    }
+    assert_equal expected, @enigma.hash_for_shifting("hello world")
+    assert_equal expected, @enigma.hash_for_shifting("hello :)world!")
+  end
+
+  def test_shift_hash
+    expected = {
+      "A" => ['q', 'x', ' '],
+      "B" => ['s', 'n', 'z'],
+      "C" => ['y', 'i', 'q'],
+      "D" => ['v', 'y']
+    }
+
+    assert_equal expected, @enigma.shift_hash("hello world")
+  end
+
+  def test_shifted_hash_to_msg
+    assert_equal "qsyvxniy zq", @enigma.shifted_hash_to_msg("hello world")
+  end
+
+  # def test_total_msg
+  #   assert_equal "qsyvxn:)iy zq!", @enigma.total_msg("hello :)world!")
   # end
 
   # def test_it_encrypts

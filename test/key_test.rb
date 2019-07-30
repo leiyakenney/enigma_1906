@@ -24,7 +24,7 @@ class KeyTest < Minitest::Test
     assert_equal 5, @key.random_key.length
   end
 
-  def test_key
+  def test_key_val
     assert_equal '12345', @key.key_val
     assert_equal '00678', @key_2.key_val
   end
