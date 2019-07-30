@@ -50,9 +50,9 @@ class EnigmaTest < Minitest::Test
     assert_equal "qsyvxniy zq", @enigma.shifted_hash_to_msg("hello world")
   end
 
-  # def test_total_msg
-  #   assert_equal "qsyvxn:)iy zq!", @enigma.total_msg("hello :)world!")
-  # end
+  def test_total_msg
+    assert_equal "qsyvxn:)iy zq!", @enigma.total_msg("hello :)world!")
+  end
 
   # def test_it_encrypts
   #   expected = {
