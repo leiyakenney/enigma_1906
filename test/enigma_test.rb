@@ -53,6 +53,12 @@ class EnigmaTest < Minitest::Test
 
   def test_total_msg
     assert_equal "zjydfe:)igiqq!", @enigma.total_msg("hello :)world!", '12345', '280719')
+    assert_equal '270719', offset_2.default_date
+  end
+
+  def test_total_decrypt_msg
+    assert_equal "hello world", @enigma.total_decrypt_msg("zjydfeigiqq", '12345', '280719')
+    assert_equal "hello :)world!", @enigma.total_decrypt_msg("zjydfe:)igiqq!", '12345', '280719')
   end
 
   def test_it_encrypts
