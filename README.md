@@ -2,7 +2,7 @@
 
 **Functionality**
 
-2 - I can't get the command line interfaces to work
+3 - Despite some challenges, I finally got my runner files to work. In addition, my Enigma class' encrypt/decrypt methods work.
 
 
 **OOP**
@@ -12,9 +12,9 @@
 
 **TDD**
 
-2.9 - My coverage is at 98% because of two lines of code I would need to stub in to test (I think; also it's the same functionality, so it's really just one line that I'd need to figure out the stub for and then copy it over), but again, didn't have time to do that. Otherwise, everything else is tested.
+2.9 - My coverage is at 98.2% because of two lines of code I would need to stub in to test (I think; also it's the same functionality, so it's really just one line that I'd need to figure out the stub for and then copy it over with minor adjustments), but again, didn't have time to do that. Otherwise, everything else is tested.
 
 
 **Version Control**
 
-3.25 - I think I did a good job with commits having single functionalities, and I've done multiple pull requests and commits. I also have done 15 pull requests which I believe have been named decently.
+3.25 - I think I did a good job with commits having single functionalities, and I've done multiple pull requests and commits. I also have done (just over) 15 pull requests which I believe have been named decently.
