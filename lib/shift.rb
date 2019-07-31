@@ -2,8 +2,8 @@ class Shift
   attr_reader :key, :offset, :char_set
 
   def initialize(key, offset)
-    @key = Key.new(12345)
-    @offset = Offset.new(280719)
+    @key = Key.new(key)
+    @offset = Offset.new(offset)
 
   end
 

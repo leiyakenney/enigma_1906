@@ -6,11 +6,11 @@ class Offset
   end
 
   def default_date
-    Date.today.strftime('%d%m%y').to_i
+    Date.today.strftime('%d%m%y')
   end
 
   def offset_hash
-    offset_array = (@date ** 2).to_s.split("")[-4..-1]
+    offset_array = (@date.to_i ** 2).to_s.split("")[-4..-1]
     hash_of_offsets = Hash.new(0)
       hash_of_offsets["A"] += offset_array[0].to_i
       hash_of_offsets["B"] += offset_array[1].to_i

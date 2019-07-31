@@ -4,6 +4,7 @@ class EnigmaTest < Minitest::Test
 
   def setup
     @enigma = Enigma.new
+    @shift = Shift.new(12345, 280719).shift
   end
 
   def test_it_exists
@@ -31,37 +32,37 @@ class EnigmaTest < Minitest::Test
       "C" => ['l', 'w', 'd'],
       "D" => ['l', 'o']
     }
-    assert_equal expected, @enigma.hash_for_shifting("hello world")
-    assert_equal expected, @enigma.hash_for_shifting("hello :)world!")
+    assert_equal expected, @enigma.hash_for_shifting("hello world", '12345', '280719')
+    assert_equal expected, @enigma.hash_for_shifting("hello :)world!", '12345', '280719')
   end
 
   def test_shift_hash
     expected = {
-      "A" => ['q', 'x', ' '],
-      "B" => ['s', 'n', 'z'],
+      "A" => ['z', 'f', 'i'],
+      "B" => ['j', 'e', 'q'],
       "C" => ['y', 'i', 'q'],
-      "D" => ['v', 'y']
+      "D" => ['d', 'g']
     }
 
-    assert_equal expected, @enigma.shift_hash("hello world")
+    assert_equal expected, @enigma.shift_hash("hello world", '12345', '280719')
   end
 
   def test_shifted_hash_to_msg
-    assert_equal "qsyvxniy zq", @enigma.shifted_hash_to_msg("hello world")
+    assert_equal "zjydfeigiqq", @enigma.shifted_hash_to_msg("hello world", '12345', '280719')
   end
 
   def test_total_msg
-    assert_equal "qsyvxn:)iy zq!", @enigma.total_msg("hello :)world!")
+    assert_equal "zjydfe:)igiqq!", @enigma.total_msg("hello :)world!", '12345', '280719')
   end
 
-  # def test_it_encrypts
-  #   expected = {
-  #     encryption: "keder ohulw",
-  #     key: "02715",
-  #     date: "040895"
-  #   }
-  #   assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
-  # end
+  def test_it_encrypts
+    expected = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+    assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
+  end
   #
   # def test_it_decrypts
   #   expected = {
