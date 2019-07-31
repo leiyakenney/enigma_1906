@@ -15,5 +15,4 @@ encrypted_text = enigma.encrypt(message_for_cipher.read)
 encrypted_msg.write(encrypted_text[:encryption])
 encrypted_msg.close
 
-puts "Created 'encrypted.txt' with the key #{encrypted_text[:key].to_i}
-      and date #{encrypted_text[:date].to_i}"
+puts "Created 'encrypted.txt' with the key #{encrypted_text[:key].to_i} and date #{encrypted_text[:date].to_i}"
