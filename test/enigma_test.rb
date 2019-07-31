@@ -51,6 +51,10 @@ class EnigmaTest < Minitest::Test
     assert_equal "zjydfeigiqq", @enigma.shifted_hash_to_msg("hello world", '12345', '280719')
   end
 
+  def test_total_decrypt_msg
+    assert_equal "hello :)world!", @enigma.total_decrypt_msg("zjydfe:)igiqq!", '12345', '280719')
+  end
+
   def test_total_msg
     assert_equal "zjydfe:)igiqq!", @enigma.total_msg("hello :)world!", '12345', '280719')
   end
