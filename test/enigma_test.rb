@@ -67,6 +67,7 @@ class EnigmaTest < Minitest::Test
       date: "040895"
     }
     assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
+    assert_equal "02715", @enigma.encrypt("hello world", "02715", "040895")[:key]
   end
 
   def test_it_decrypts
