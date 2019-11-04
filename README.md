@@ -9,7 +9,6 @@ In addition to encrypting, our Enigma was also to be able to decrypt, using a ru
 
 ### Versions
 * Ruby 2.4.1
-* Rails 5.2.0
 
 ### To Encrypt/Decrypt Messages
 
