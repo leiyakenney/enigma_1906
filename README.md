@@ -7,11 +7,11 @@ In addition to working with provided shifts, the code also allows for a random s
 In addition to encrypting, our Enigma was also to be able to decrypt, using a runner file, based upon the key and date that were used for the encryption. 
 
 
-## Versions
+### Versions
 * Ruby 2.4.1
 * Rails 5.2.0
 
-## Encrypt/Decrypt 
+### To Encrypt/Decrypt Messages
 
 ```
 $ git clone
