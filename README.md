@@ -6,6 +6,9 @@ In addition to working with provided shifts, the code also allows for a random s
 
 In addition to encrypting, our Enigma was also to be able to decrypt, using a runner file, based upon the key and date that were used for the encryption. 
 
+## Contributor
+Enigma was created by Leiya Kenney as a Back End Mod 1 project at Turing School of Software and Design
+
 
 ### Versions
 * Ruby 2.4.1
